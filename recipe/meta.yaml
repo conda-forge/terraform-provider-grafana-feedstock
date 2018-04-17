@@ -1,10 +1,10 @@
 {% set provider= "Grafana" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
-{% set sha256 = "1f5df49f5ae556898236e27c587c08a3808cacd5441162f76b57e5332102a791" %}
+{% set sha256 = "773712ef082658596232120647ef9f1d4b78060c88caf819ca3e523560aff16e" %}
 {% set sha256_win32 = "e56352a8894e4adc50bcc1fe81fc2ea84d63438cd22b6795974efbc5aa0fc452" %}
 {% set sha256_win64 = "d86b11e96e62ba8a63ba5d2f0f77efd8ddc0a44f3a97f6697843b5f3d9864cd9" %}
 
