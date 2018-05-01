@@ -1,12 +1,11 @@
-{% set provider= "Grafana" %}
-{% set version = "1.0.1" %}
+{% set provider = "Grafana" %}
+{% set version = "1.0.2" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
-{% set sha256 = "1f5df49f5ae556898236e27c587c08a3808cacd5441162f76b57e5332102a791" %}
-{% set sha256_win32 = "e56352a8894e4adc50bcc1fe81fc2ea84d63438cd22b6795974efbc5aa0fc452" %}
-{% set sha256_win64 = "d86b11e96e62ba8a63ba5d2f0f77efd8ddc0a44f3a97f6697843b5f3d9864cd9" %}
+{% set sha256 = "1bc7ea1428d70ec4a5a9a5560163c76d22733585cd6acdd49ef627662a8faee3" %}
+{% set sha256_win64 = "bed6d3969d6e9a868cc08d5110c6dd89df42f3fc76acef26f8a18415b81e8549" %}
 
 package:
   name: {{ name|lower }}
@@ -17,10 +16,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
   sha256: {{ sha256 }}  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
   url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
   fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: {{ sha256_win32 }}  # [win32]
   sha256: {{ sha256_win64 }}  # [win64]
 
 build:
@@ -46,7 +43,7 @@ about:
   license: MPL 2.0
   summary: The Terraform {{ provider }} provider
   doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html
-  dev_url: https://https://github.com/terraform-providers/{{ name }}
+  dev_url: https://github.com/terraform-providers/{{ name }}
 
 extra:
   recipe-maintainers:
