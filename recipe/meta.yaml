@@ -1,11 +1,8 @@
 {% set provider = "Grafana" %}
-{% set version = "1.0.2" %}
+{% set version = "1.1.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
-
-{% set sha256 = "1bc7ea1428d70ec4a5a9a5560163c76d22733585cd6acdd49ef627662a8faee3" %}
-{% set sha256_win64 = "bed6d3969d6e9a868cc08d5110c6dd89df42f3fc76acef26f8a18415b81e8549" %}
 
 package:
   name: {{ name|lower }}
@@ -14,13 +11,13 @@ package:
 source:
   - folder: src/github.com/terraform-providers/{{ name|lower }}
     url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: {{ sha256 }}  # [not win]
+    sha256: 50ac526322a242b70c147634377072bcf1da321449bdaf4e5096e3fedeab56a8  # [not win]
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: {{ sha256_win64 }}  # [win64]
+    sha256: a6c5f378aa6efb78cffaf3cae708e165836609bd6b793594af38282dace84de8  # [win64]
 
 build:
-  number: 1
+  number: 0
   script:
     - XCOPY src\github.com\terraform-providers\{{ name|lower }}\{{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
 
