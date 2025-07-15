@@ -1,6 +1,6 @@
 {% set provider = "Grafana" %}
 {% set goname = "github.com/grafana/terraform-provider-"+provider.lower() %}
-{% set version = "3.25.7" %}
+{% set version = "3.25.8" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: db807d0587d3751888452d2f3197395539ff7db35bdb4882611076f363b2651e
+  sha256: 52aa3c46641b16ee7d8d3e4b0dafc1f50a25551f1d9994043daec33306cbd7e4
 
 
 build:
